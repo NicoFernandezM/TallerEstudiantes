@@ -1,5 +1,7 @@
 package modelo;
 
+import utils.DigitoVerificador;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class CursoICC264 {
     public boolean agregarEstudiante(Estudiante estudiante) {
         String rut = estudiante.getRut();
 
-        if(!estudianteExiste(rut)) {
+        if(!estudianteExiste(rut) && DigitoVerificador.validarRut(rut)) {
             estudiantes.add(estudiante);
             return true;
         }

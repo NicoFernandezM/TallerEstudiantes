@@ -15,3 +15,4 @@
 20617429319;SÁEZ ALMAZABAL ESTEBAN SIMÓN;e.saez07@ufromail.cl
 20923634620;SANDOVAL ACUÑA BERNARDO ANTONIO;b.sandoval07@ufromail.cl
 20366482618;VILLAGRAN OLIVERA JUAN FERNANDO;j.villagran03@ufromail.cl
+10333601-5;nuevoEstudiante;kjdfsksd@ufromail.cl

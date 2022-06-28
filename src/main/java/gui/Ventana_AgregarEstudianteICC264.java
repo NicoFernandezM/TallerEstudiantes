@@ -1,6 +1,8 @@
 package gui;
 
+import dato.DatosEstudiantes;
 import modelo.CursoICC264;
+import modelo.Estudiante;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -37,7 +39,28 @@ public class Ventana_AgregarEstudianteICC264 extends Ventana implements ActionLi
     }
 
     public void agregarEstudiante() {
+        if(!camposVacios()) {
+            Estudiante estudiante = new Estudiante(rutField.getText(), nombreField.getText(), emailField.getText());
+            curso.agregarEstudiante(estudiante);
+            DatosEstudiantes.registrarDatos(estudiante, "ICC264.txt");
 
+            JOptionPane.showMessageDialog(this, "¡El ha sido registrado exitósamente!",
+                    "Vehiculos", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "El estudiante no se ha podido registrar",
+                    "Vehiculos", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    public boolean camposVacios() {
+        return rutField.getText().equals("") || nombreField.getText().equals("") ||
+                emailField.getText().equals("");
+    }
+
+    public void limpiarTextField() {
+        nombreField.setText("");
+        rutField.setText("");
+        emailField.setText("");
     }
 
     @Override
@@ -46,7 +69,8 @@ public class Ventana_AgregarEstudianteICC264 extends Ventana implements ActionLi
             new Ventana_CursoICC264(this.curso);
             this.dispose();
         } else if(e.getSource() == agregarBtn) {
-
+            agregarEstudiante();
+            limpiarTextField();
         }
     }
 }
