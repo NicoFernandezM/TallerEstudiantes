@@ -39,9 +39,8 @@ public class Ventana_AgregarEstudianteICC264 extends Ventana implements ActionLi
     }
 
     public void agregarEstudiante() {
-        if(!camposVacios()) {
-            Estudiante estudiante = new Estudiante(rutField.getText(), nombreField.getText(), emailField.getText());
-            curso.agregarEstudiante(estudiante);
+        Estudiante estudiante = new Estudiante(rutField.getText(), nombreField.getText(), emailField.getText());
+        if(!camposVacios() && curso.agregarEstudiante(estudiante)) {
             DatosEstudiantes.registrarDatos(estudiante, "ICC264.txt");
 
             JOptionPane.showMessageDialog(this, "¡El ha sido registrado exitósamente!",
@@ -51,6 +50,8 @@ public class Ventana_AgregarEstudianteICC264 extends Ventana implements ActionLi
                     "Vehiculos", JOptionPane.INFORMATION_MESSAGE);
         }
     }
+
+
 
     public boolean camposVacios() {
         return rutField.getText().equals("") || nombreField.getText().equals("") ||
