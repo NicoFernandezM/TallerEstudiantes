@@ -7,7 +7,7 @@ public class DigitoVerificador {
         return input;
     }
 
-    private static String obtenerRutSinDigito(String rut) {
+    public static String obtenerRutSinDigito(String rut) {
         return rut.substring(0, rut.length() - 1);
     }
 
