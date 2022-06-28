@@ -14,7 +14,7 @@ public class DigitoVerificadorTest {
     public void init() {
         rutIngresados = new String[] {"103336015", "157079484"};
         casosDePrueba = new String[] {"10333601", "1570794"};
-        resultadosEsperados = new boolean[] {true, false};
+        resultadosEsperados = new boolean[] {true, false};// caso exitoso y caso fallido
     }
 
     @Test
