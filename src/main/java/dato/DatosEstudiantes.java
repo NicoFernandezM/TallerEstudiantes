@@ -8,12 +8,13 @@ import java.io.*;
 public class DatosEstudiantes {
     public static void leerArchivoEstudiantes(CursoICC264 curso, String direccionArchivo) {
         String textoArchivo = "";
+
         try {
             File archivo = new File(direccionArchivo);
             FileReader fr = new FileReader(archivo);
             BufferedReader br = new BufferedReader(fr);
 
-            while((textoArchivo = br.readLine()) != null){
+            while ((textoArchivo = br.readLine()) != null) {
                 String[] data = textoArchivo.split(";");
                 curso.getEstudiantes().add(new Estudiante(data[0], data[1], data[2]));
             }

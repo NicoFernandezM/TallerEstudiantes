@@ -15,9 +15,6 @@ public class Ventana_CursoICC264 extends Ventana implements ActionListener {
     private JButton buscarBtn;
     private JComboBox rutEstudiante;
 
-    private JLabel nombreLabel;
-    private JLabel emailLabel;
-
     private JLabel nombre;
     private JLabel email;
 
@@ -26,8 +23,8 @@ public class Ventana_CursoICC264 extends Ventana implements ActionListener {
 
         this.setTitle("Curso ICC264");
 
-        JLabel nombreLabel = this.generarEtiqueta("Nombre: ", 20, 100, 80, 20);
-        JLabel emailLabel = this.generarEtiqueta("Email: ", 20, 150, 80, 20);
+        this.generarEtiqueta("Nombre: ", 20, 100, 80, 20);
+        this.generarEtiqueta("Email: ", 20, 150, 80, 20);
 
         nuevoEstudianteBtn = this.generarBoton("Nuevo estudiante", 200, 200, 150, 30);
         nuevoEstudianteBtn.addActionListener(this);

@@ -23,9 +23,9 @@ public class Ventana_AgregarEstudianteICC264 extends Ventana implements ActionLi
 
         this.setTitle("Agregar Estudiante ICC264");
 
-        JLabel rutLabel = this.generarEtiqueta("Rut: ", 50, 50, 100, 20);
-        JLabel nombreLabel = this.generarEtiqueta("Nombre: ", 50, 100, 100, 20);
-        JLabel emailLabel = this.generarEtiqueta("Email: ", 50, 150, 100, 20);
+        this.generarEtiqueta("Rut: ", 50, 50, 100, 20);
+        this.generarEtiqueta("Nombre: ", 50, 100, 100, 20);
+        this.generarEtiqueta("Email: ", 50, 150, 100, 20);
 
         agregarBtn = this.generarBoton("Agregar", 50, 200, 125, 30);
         cancelarBtn = this.generarBoton("Cancelar", 225, 200, 125, 30);
@@ -40,14 +40,15 @@ public class Ventana_AgregarEstudianteICC264 extends Ventana implements ActionLi
 
     public void agregarEstudiante() {
         Estudiante estudiante = new Estudiante(rutField.getText(), nombreField.getText(), emailField.getText());
+
         if(!camposVacios() && curso.agregarEstudiante(estudiante)) {
             DatosEstudiantes.registrarDatos(estudiante, "ICC264.txt");
 
-            JOptionPane.showMessageDialog(this, "¡El ha sido registrado exitósamente!",
-                    "Vehiculos", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "¡El estudiante ha sido registrado exitósamente!",
+                    "Estudiantes", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "El estudiante no se ha podido registrar",
-                    "Vehiculos", JOptionPane.INFORMATION_MESSAGE);
+                    "Estudiantes", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
